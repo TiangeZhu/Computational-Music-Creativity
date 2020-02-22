@@ -1,0 +1,28 @@
+#N canvas 0 50 450 300 10;
+#X obj 234 117 f;
+#X obj 170 137 change;
+#X obj 170 93 metro 10;
+#X obj 170 115 f;
+#X obj 200 115 1;
+#X obj 249 42 1;
+#X obj 234 91 == 2;
+#X obj 170 68 loadbang;
+#X obj 108 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 234 67 +;
+#X obj 249 19 r \$1;
+#X floatatom 313 33 5 0 0 0 - - -;
+#X obj 170 163 s out_drum4;
+#X connect 0 0 1 0;
+#X connect 1 0 12 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 9 0;
+#X connect 6 0 0 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 1;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X connect 10 0 11 0;
+#X coords 0 -1 1 1 30 30 2 100 100;
