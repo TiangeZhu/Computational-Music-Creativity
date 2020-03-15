@@ -1,0 +1,132 @@
+#N canvas -11 -11 1920 1016 10;
+#X obj 77 298 soundfiler;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array glass 77312 float 2;
+#X coords 0 1 77312 -1 200 140 1;
+#X restore 77 369 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array thunder 1.00875e+006 float 2;
+#X coords 0 1 1.00875e+006 -1 200 140 1;
+#X restore 313 370 graph;
+#X obj 77 35 loadbang;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array rain 1.15715e+006 float 2;
+#X coords 0 1 1.15715e+006 -1 200 140 1;
+#X restore 552 371 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array ice 271503 float 2;
+#X coords 0 1 271503 -1 200 140 1;
+#X restore 313 547 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array fry 657924 float 2;
+#X coords 0 1 657924 -1 200 140 1;
+#X restore 785 372 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array pourwater 353280 float 2;
+#X coords 0 1 353280 -1 200 140 1;
+#X restore 76 549 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array openguitarcase 755159 float 2;
+#X coords 0 1 755159 -1 200 140 1;
+#X restore 552 550 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array icantbelieve 90112 float 2;
+#X coords 0 1 90112 -1 200 140 1;
+#X restore 788 551 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array guitar 267061 float 2;
+#X coords 0 1 267061 -1 200 140 1;
+#X restore 77 725 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array gogogo 144674 float 2;
+#X coords 0 1 144674 -1 200 140 1;
+#X restore 313 725 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array door 55270 float 2;
+#X coords 0 1 55270 -1 200 140 1;
+#X restore 553 727 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array cutveg 1.34158e+006 float 2;
+#X coords 0 1 1.34158e+006 -1 200 140 1;
+#X restore 788 725 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array blender 634605 float 2;
+#X coords 0 1 634605 -1 200 140 1;
+#X restore 1017 373 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array pageflip 335872 float 2;
+#X coords 0 1 335872 -1 200 140 1;
+#X restore 1018 552 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array radio 1.04099e+006 float 2;
+#X coords 0 1 1.04099e+006 -1 200 140 1;
+#X restore 1017 722 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array plastic 879485 float 2;
+#X coords 0 1 879485 -1 200 140 1;
+#X restore 1244 375 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array throw 89603 float 2;
+#X coords 0 1 89603 -1 200 140 1;
+#X restore 1243 552 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array water 1.08163e+006 float 2;
+#X coords 0 1 1.08163e+006 -1 200 140 1;
+#X restore 1243 724 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array onepage 41971 float 2;
+#X coords 0 1 41971 -1 200 140 1;
+#X restore 1467 375 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array radiostatic 598271 float 2;
+#X coords 0 1 598271 -1 200 140 1;
+#X restore 1467 554 graph;
+#X obj 629 60 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array bird 183648 float 2;
+#X coords 0 1 183648 -1 200 140 1;
+#X restore 1468 725 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array typing 307091 float 2;
+#X coords 0 1 307091 -1 200 140 1;
+#X restore 1693 374 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array spray 47160 float 2;
+#X coords 0 1 47160 -1 200 140 1;
+#X restore 1694 553 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array walk 465246 float 2;
+#X coords 0 1 465246 -1 200 140 1;
+#X restore 1693 725 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array wind 1.2165e+006 float 2;
+#X coords 0 1 1.2165e+006 -1 200 140 1;
+#X restore 76 894 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array disinfection 989079 float 2;
+#X coords 0 1 989079 -1 200 140 1;
+#X restore 312 892 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array window 428992 float 2;
+#X coords 0 1 428992 -1 200 140 1;
+#X restore 553 895 graph;
+#X msg 77 67 read -resize sample/glass.wav glass \, read -resize sample/thunder.wav
+thunder \, read -resize sample/rain.wav rain \, read -resize sample/fry.wav
+fry \, read -resize sample/ice.wav ice \, read -resize sample/pourwater.wav
+pourwater \, read -resize sample/openguitarcase.wav openguitarcase
+\, read -resize sample/icantbelieve.wav icantbelieve \, read -resize
+sample/guitar.wav guitar \, read -resize sample/gogogo.wav gogogo \,
+read -resize sample/door.wav door \, read -resize sample/cutveg.wav
+cutveg \, read -resize sample/onepage.wav onepage \, read -resize sample/water.wav
+water \, read -resize sample/throw.wav throw \, read -resize sample/plastic.wav
+plastic \, read -resize sample/radio.wav radio \, read -resize sample/pageflip.wav
+pageflip \, read -resize sample/disinfection.wav disinfection \, read
+-resize sample/radiostatic.wav radiostatic \, read -resize sample/bird.wav
+bird \, read -resize sample/typing.wav typing \, read -resize sample/spray.wav
+spray \, read -resize sample/walk.wav walk \, read -resize sample/wind.wav
+wind \, read -resize sample/window.wav window \, read -resize sample/blender.wav
+blender;
+#X connect 3 0 30 0;
+#X connect 30 0 0 0;
+#X coords 0 -1 1 1 480 350 2 50 350;
