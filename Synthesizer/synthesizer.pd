@@ -1,4 +1,4 @@
-#N canvas 270 284 1235 586 10;
+#N canvas -11 -11 1920 1016 10;
 #N canvas 191 231 1527 711 keyboard 0;
 #X text 122 178 C;
 #X text 163 177 Db;
@@ -7,7 +7,7 @@
 #X text 312 178 E;
 #X obj 120 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 288 128 hsl 128 15 0 1 0 0 empty empty volume_keyboard -2 -8
+#X obj 334 134 hsl 128 15 0 1 0 0 empty empty volume_keyboard -2 -8
 0 10 -262144 -1 -1 6350 1;
 #X obj 120 269 * 1;
 #X obj 166 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -34,13 +34,16 @@
 -1 -1;
 #X obj 120 18 key;
 #X floatatom 155 18 5 0 0 0 - - -;
+#X text 195 19 a:97/s:115/d:100/f:102/g:103/h:104/j:106/k:107/l:108/
+\; :59/ ':39/q:113;
 #X obj 120 292 s freq;
-#X obj 721 183 hsl 128 15 1 5 0 0 empty empty octave -2 -8 0 10 -262144
+#X obj 138 133 hsl 128 15 1 5 0 0 empty empty octave -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 764 164 5 0 0 0 - - -;
+#X floatatom 181 114 5 0 0 0 - - -;
 #X obj 597 56 rmstodb;
-#X floatatom 434 127 5 0 0 0 - - -;
+#X floatatom 431 114 5 0 0 0 - - -;
 #X obj 479 51 s volume;
+#X obj 120 52 select 97 115 100 102 103 104 106 107 108 59 39 113;
 #X msg 120 210 261.62;
 #X msg 173 210 277.18;
 #X msg 223 210 293.66;
@@ -62,36 +65,42 @@
 #X text 566 177 A;
 #X text 611 178 Bb;
 #X text 667 177 B;
-#X text 616 101 midi: 60 ~ 71;
+#X text 528 132 midi: 60 ~ 71;
 #X obj 718 22 loadbang;
 #X msg 761 55 0.5;
 #X msg 718 56 1;
-#X obj 120 52 select 97 115 100 102 103 104 106 107 108 59 39 47 40
-;
-#X text 194 19 a:97/s:115/d:100/f:102/g:103/h:104/j:106/k:107/l:108/
-\; :59/ ':39/ /:47;
-#X connect 5 0 27 0;
-#X connect 6 0 24 0;
-#X connect 6 0 26 0;
-#X connect 7 0 21 0;
-#X connect 8 0 28 0;
-#X connect 9 0 29 0;
-#X connect 10 0 30 0;
-#X connect 11 0 31 0;
-#X connect 12 0 32 0;
-#X connect 13 0 33 0;
-#X connect 14 0 34 0;
-#X connect 15 0 35 0;
-#X connect 16 0 36 0;
-#X connect 17 0 37 0;
-#X connect 18 0 38 0;
+#X connect 5 0 29 0;
+#X connect 6 0 25 0;
+#X connect 6 0 27 0;
+#X connect 7 0 22 0;
+#X connect 8 0 30 0;
+#X connect 9 0 31 0;
+#X connect 10 0 32 0;
+#X connect 11 0 33 0;
+#X connect 12 0 34 0;
+#X connect 13 0 35 0;
+#X connect 14 0 36 0;
+#X connect 15 0 37 0;
+#X connect 16 0 38 0;
+#X connect 17 0 39 0;
+#X connect 18 0 40 0;
 #X connect 19 0 20 0;
-#X connect 20 0 51 0;
-#X connect 22 0 23 0;
-#X connect 22 0 7 1;
-#X connect 24 0 25 0;
-#X connect 27 0 7 0;
-#X connect 28 0 7 0;
+#X connect 20 0 28 0;
+#X connect 23 0 24 0;
+#X connect 23 0 7 1;
+#X connect 25 0 26 0;
+#X connect 28 0 5 0;
+#X connect 28 1 8 0;
+#X connect 28 2 9 0;
+#X connect 28 3 10 0;
+#X connect 28 4 11 0;
+#X connect 28 5 12 0;
+#X connect 28 6 13 0;
+#X connect 28 7 14 0;
+#X connect 28 8 15 0;
+#X connect 28 9 16 0;
+#X connect 28 10 17 0;
+#X connect 28 12 18 0;
 #X connect 29 0 7 0;
 #X connect 30 0 7 0;
 #X connect 31 0 7 0;
@@ -102,22 +111,12 @@
 #X connect 36 0 7 0;
 #X connect 37 0 7 0;
 #X connect 38 0 7 0;
-#X connect 48 0 49 0;
-#X connect 48 0 50 0;
-#X connect 49 0 6 0;
-#X connect 50 0 22 0;
-#X connect 51 0 5 0;
-#X connect 51 1 8 0;
-#X connect 51 2 9 0;
-#X connect 51 3 10 0;
-#X connect 51 4 11 0;
-#X connect 51 5 12 0;
-#X connect 51 6 13 0;
-#X connect 51 7 14 0;
-#X connect 51 8 15 0;
-#X connect 51 9 16 0;
-#X connect 51 10 17 0;
-#X connect 51 12 18 0;
+#X connect 39 0 7 0;
+#X connect 40 0 7 0;
+#X connect 50 0 51 0;
+#X connect 50 0 52 0;
+#X connect 51 0 6 0;
+#X connect 52 0 23 0;
 #X coords 0 -1 1 1 600 100 2 100 100;
 #X restore 167 21 pd keyboard;
 #X obj 42 405 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
@@ -324,20 +323,10 @@
 #X obj 419 469 / 1000;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array wave 100 float 1;
-#A 0 -0.0336144 0.0398968 0.0958488 0.130572 0.142658 0.133024 0.104763
-0.0627478 0.0130819 -0.0375649 -0.0826492 -0.116442 -0.134605 -0.134595
--0.115901 -0.0800446 -0.0303854 0.0282861 0.0902749 0.149583 0.20057
-0.238521 0.260131 0.2638 0.249797 0.220161 0.178473 0.129419 0.0782968
-0.0304404 -0.00935665 -0.0372951 -0.0509706 -0.0495583 -0.0338764 -0.00622363
-0.0298972 0.0702043 0.110129 0.145303 0.172045 0.18772 0.191034 0.182094
-0.162386 0.134555 0.102097 0.0689412 0.039004 0.0157723 0.00191059
--0.000998449 0.00738835 0.0261716 0.0533167 0.0859065 0.120468 0.153342
-0.181054 0.200669 0.210057 0.208058 0.194534 0.170325 0.137084 0.0970275
-0.0526727 0.00653541 -0.039115 -0.0824912 -0.122379 -0.158199 -0.189918
--0.21794 -0.242886 -0.265391 -0.285885 -0.304405 -0.320496 -0.333177
--0.341017 -0.342262 -0.33508 -0.317813 -0.28926 -0.248929 -0.19723
--0.135588 -0.0664318 0.00689843 0.080395 0.149675 0.210371 0.258501
-0.290862 0.305342 0.301134 0.27884 0.240441 0.189132;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
 #X coords 0 3 99 -3 200 140 1 0 0;
 #X restore 441 177 graph;
 #X obj 473 358 loadbang;
@@ -393,38 +382,15 @@
 #X restore 67 141 pd abstract;
 #X obj 168 408 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 800 29 harmonics 0.5;
-#X obj 801 54 harmonics 1;
-#X obj 903 55 harmonics 2;
-#X obj 903 29 harmonics 1.51;
-#X obj 801 81 harmonics 1.18;
-#X obj 903 81 harmonics 2.51;
-#X obj 804 169 bng 15 250 50 0 empty empty read 17 7 0 10 -262144 -1
--1;
-#X obj 877 187 bng 15 250 50 0 empty empty load 17 7 0 10 -262144 -1
--1;
-#X obj 805 258 tgl 15 0 empty empty play 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 805 351 generator;
-#X obj 953 323 bng 15 250 50 0 empty empty random_init 17 7 0 10 -262144
--1 -1;
-#X floatatom 864 295 5 0 0 0 - - -;
-#X obj 864 260 random_speed;
-#X obj 804 200 process;
-#X obj 805 322 metro 300;
-#X obj 802 104 harmonics 2.66;
-#X obj 904 104 harmonics 3.02;
-#X text 802 144 FIRST READ A MIDI FILE \, THEN LOAD!;
-#X text 803 218 read and send transition matrix to generator;
-#X text 811 378 note generator;
-#X text 950 307 change initial if it loops;
-#X text 314 415 SECOND ORDER MARKOV CHAIN NOTE GENERATOR Tiange Zhu
+#X obj 802 88 harmonics 0.5;
+#X obj 803 117 harmonics 1;
+#X obj 803 201 harmonics 2;
+#X obj 803 172 harmonics 1.51;
+#X obj 803 144 harmonics 1.18;
+#X obj 802 227 harmonics 2.51;
+#X text 798 35 Tiange Zhu synthesizer.pd;
+#X text 320 412 It's possible to control with both mouse and keyboard.
+For standard English keyboard: a:60(C) s:61(Db) d:62(D) f:63(Eb) g:64(E)
+h:65(F) j:66(Gb) k:67(G) l:68(Ab) \; :69(A) ':70(Bb) any other key:71(B)
 ;
 #X connect 2 0 4 0;
-#X connect 13 0 20 0;
-#X connect 14 0 20 1;
-#X connect 15 0 21 0;
-#X connect 17 0 16 1;
-#X connect 18 0 21 1;
-#X connect 19 0 18 0;
-#X connect 21 0 16 0;
