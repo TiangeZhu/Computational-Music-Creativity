@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>interSpaceSynth</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      *{
+        margin : 0;
+        padding : 0;
+      }
+
+      body {
+          height: 100vh;
+          background-color: #000;
+          font-family: 'Roboto',sans-serif;
+          background: linear-gradient(180deg,#DB302A 0%,#62186B 100%) no-repeat;
+          width: 720px;
+          margin: 0 auto;
+      }
+
+      .container {
+          margin-top: 10vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .box-minmax{
+        margin: 30px 0 50px 0;
+        width: 608px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: #FFFFFF;
+        span:first-child{
+          margin-left: 10px;
+        }
+      }
+
+      .range-slider {
+          margin-top: 10vh;
+          
+      }
+
+      .rs-range {
+          margin-top: 29px;
+          width: 600px;
+          -webkit-appearance: none;
+          &:focus {
+              outline: none;
+          }
+          &::-webkit-slider-runnable-track {
+              width: 100%;
+              height: 1px;
+              cursor: pointer;
+              box-shadow: none;
+              background: #ffffff;
+              border-radius: 0px;
+              border: 0px solid #010101;
+          }
+          &::-moz-range-track {
+              width: 100%;
+              height: 1px;
+              cursor: pointer;
+              box-shadow: none;
+              background: #ffffff;
+              border-radius: 0px;
+              border: 0px solid #010101;
+          }
+        
+          &::-webkit-slider-thumb {
+              box-shadow: none;
+              border: 0px solid #ffffff;
+              box-shadow: 0px 10px 10px rgba(0,0,0,0.25);
+              height: 42px;
+              width: 22px;
+              border-radius: 22px;
+              background: rgba(255,255,255,1);
+              cursor: pointer;
+              -webkit-appearance: none;
+              margin-top: -20px;
+          }
+        &::-moz-range-thumb{
+              box-shadow: none;
+              border: 0px solid #ffffff;
+              box-shadow: 0px 10px 10px rgba(0,0,0,0.25);
+              height: 42px;
+              width: 22px;
+              border-radius: 22px;
+              background: rgba(255,255,255,1);
+              cursor: pointer;
+              -webkit-appearance: none;
+              margin-top: -20px;
+        }
+        &::-moz-focus-outer {
+          border: 0;
+          }
+      }
+
+      .rs-label {
+          
+          position: relative;
+          transform-origin: center center;
+          display: block;
+          width: 98px;
+          height: 98px;
+          background: transparent;
+          border-radius: 50%;
+          line-height: 30px;
+          text-align: center;
+          font-weight: bold;
+          padding-top: 22px;
+          box-sizing: border-box;
+          border: 2px solid #fff;
+          margin-top: 20px;
+          margin-left: -38px;
+          left: attr(value);
+          color: #fff;
+          font-style: normal;
+          font-weight: normal;
+          line-height: normal;
+          font-size: 36px;
+          &::after {
+              content: "";
+              display: block;
+              font-size: 20px;
+              letter-spacing: 0.07em;
+              margin-top: -2px;
+          } 
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+    <!-- <input type="number" id="x" value="0"> -->
+    <!-- <input type="number" id="y" value="0"> -->
+
+
+    <div class="container">
+      <h1>interSpaceSynth</h1>
+
+      <div class="range-slider">
+        <span id="rs-bullet" class="rs-label">50</span>
+        <input id="rs-range-line" class="rs-range" type="range" value="50" min="0" max="100">
+      </div>
+      
+      <div class="box-minmax">
+        <span>0</span><span>100</span>
+      </div>
+
+      <h2>Connection Status: <pre id="output">Standby</pre> </h2>
+    </div>
+
+
+    <!-- <button id="send">Send</button> -->
+
+
+
+    <script>
+
+      var rangeSlider = document.getElementById("rs-range-line");
+      var rangeBullet = document.getElementById("rs-bullet");
+
+      rangeSlider.addEventListener("input", showSliderValue, false);
+
+      function showSliderValue() {
+        rangeBullet.innerHTML = rangeSlider.value;
+        var bulletPosition = (rangeSlider.value /rangeSlider.max);
+        rangeBullet.style.left = (bulletPosition * 578) + "px";
+      }
+
+
+
+
+      var socket = io.connect();
+
+      socket.on('osc', function(data) {
+        var output = document.getElementById('output');
+        // document.getElementById('x').value = data.x;
+        // document.getElementById('y').value = data.y;
+        output.innerHTML = "Ready";
+        // output.innerHTML = output.innerHTML + 'x: ' + data.x + ' y: ' + data.y + '\n';
+      });
+
+      document.getElementById('rs-range-line').addEventListener('input', function() {
+        console.log(socket.id);
+        console.log( getHash(socket.id));
+        socket.emit('browser', {
+          x: getHash(socket.id) || 0,
+          y: document.getElementById('rs-range-line').value.trim() || 0
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", showSliderValue, false);
+
+function getHash(input){
+  var hash = 0, len = input.length;
+  for (var i = 0; i < len; i++) {
+    hash  = ((hash << 5) - hash) + input.charCodeAt(i);
+    hash |= 0; // to 32bit integer
+  }
+  return hash;
+}
+
+    </script>
+
+  </body>
+</html>

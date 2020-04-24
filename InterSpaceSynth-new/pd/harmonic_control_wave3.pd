@@ -1,0 +1,11 @@
+#N canvas 3754 630 2880 1556 10;
+#X obj 267 39 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 102 130 harmonics3 0.49 \$1 s1;
+#X obj 104 315 harmonics3 2.02 \$1 s4;
+#X obj 104 516 harmonics3 3.78 \$1 s7;
+#X obj 104 452 harmonics3 2.55 \$1 s6;
+#X obj 105 249 harmonics3 1.19 \$1 s3;
+#X obj 104 189 harmonics3 1.88 \$1 s2;
+#X obj 103 382 harmonics3 2.38 \$1 s5;
+#X coords 0 -1 1 1 150 480 1 100 100;
